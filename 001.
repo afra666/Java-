@@ -1,0 +1,32 @@
+/***
+ * 演员演出,类
+ */
+public class Actor extends Thread {
+    /***
+     * 复写run方法
+     */
+
+    public void run() {
+        System.out.println(getName()+"是一个演员，");
+        int cnt=0;
+        cnt++;
+        System.out.println(getName()+"开始表演："+cnt);
+        System.out.println(getName()+"表演结束。");
+    }
+    /***
+     * main
+     */
+    public static void main(String[] args) {
+        Thread actor=new Actor();//创建新线程
+        actor.setName("My.Thread");
+        actor.start();
+        System.out.println("ok");
+    }
+}
+
+
+//输出
+ok
+My.Thread是一个演员，
+My.Thread开始表演：1
+My.Thread表演结束。
